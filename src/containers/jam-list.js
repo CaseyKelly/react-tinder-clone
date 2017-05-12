@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class JamList extends Component {
+class JamList extends Component {
   renderList() {
-    return this.props.books.map((book) => {
+    return this.props.jams.map((jam) => {
       return (
         <li key={jam.title} className="list-group-item">{jam.title}</li>
       )
@@ -17,3 +18,11 @@ export default class JamList extends Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    jams: state.jams
+  }
+}
+
+export default connect(mapStateToProps)(JamList);
