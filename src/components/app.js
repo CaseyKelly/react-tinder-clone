@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 
+import JamList from '../containers/jam-list'
+
 export default class App extends Component {
   render() {
     return (
-      <div>React simple starter</div>
+      <div>
+        <JamList />
+      </div>
     );
   }
 }
