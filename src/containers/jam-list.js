@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { selectJam } from '../actions/index';
+import { bindActionCreators } from 'redux';
 
 class JamList extends Component {
   renderList() {
@@ -25,4 +27,8 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(JamList);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ selectJam: selectJam }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(JamList);
