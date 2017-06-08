@@ -1,3 +1,9 @@
 export function selectJam(jam) {
-  console.log('A jam has been selected:', jam.title);
+  // selectJam is an ActionCreator, it needs
+  // to return an action, an object with a
+  // type property.
+  return {
+    type: 'JAM_SELECTED',
+    payload: jam
+  };
 }

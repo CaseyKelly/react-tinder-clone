@@ -7,7 +7,12 @@ class JamList extends Component {
   renderList() {
     return this.props.jams.map((jam) => {
       return (
-        <li key={jam.title} className="list-group-item">{jam.title}</li>
+        <li
+          key={jam.title}
+          onClick={() => this.props.selectJam(jam)}
+          className="list-group-item">
+          {jam.title}
+        </li>
       )
     });
   }
